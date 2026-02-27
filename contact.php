@@ -4,13 +4,21 @@
  * WITH OPTIONAL AUTO-REPLY (won't break if auto-reply fails)
  */
 
+session_start();
+
 error_reporting(E_ALL);
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 
 // Prevent direct access
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
-    header("Location: index.html");
+    header("Location: index.php");
+    exit;
+}
+
+// CSRF check
+if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    header("Location: index.php?error=csrf");
     exit;
 }
 
@@ -70,14 +78,14 @@ function getVisitorIP() {
 
 // Check honeypot
 if (!empty($_POST['website'])) {
-    header("Location: index.html?error=spam");
+    header("Location: index.php?error=spam");
     exit;
 }
 
 // Rate limiting check
 $visitorIP = getVisitorIP();
 if (!checkRateLimit($visitorIP)) {
-    header("Location: index.html?error=rate_limit");
+    header("Location: index.php?error=rate_limit");
     exit;
 }
 
@@ -90,14 +98,14 @@ $message = isset($_POST["message"]) ? trim(strip_tags($_POST["message"])) : '';
 
 // Validate required fields
 if (empty($name) || empty($company) || empty($email) || empty($message)) {
-    header("Location: index.html?error=missing");
+    header("Location: index.php?error=missing");
     exit;
 }
 
 // Validate email
 $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: index.html?error=invalid_email");
+    header("Location: index.php?error=invalid_email");
     exit;
 }
 
@@ -374,7 +382,7 @@ if ($notificationSent && ENABLE_AUTO_REPLY) {
 // Final result - base success on notification only
 if ($notificationSent) {
     error_log("Contact form SUCCESS: $name ($email)");
-    header("Location: index.html?success=true");
+    header("Location: index.php?success=true");
 } else {
     error_log("Contact form FAILED: $name ($email)");
     
@@ -385,7 +393,7 @@ if ($notificationSent) {
     $backup .= "Product: $product\nMessage: $message\n";
     @file_put_contents('form_submissions.txt', $backup, FILE_APPEND);
     
-    header("Location: index.html?error=send_failed");
+    header("Location: index.php?error=send_failed");
 }
 
 exit;

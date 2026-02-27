@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -554,6 +560,7 @@
         <form class="contact-form" id="contactForm" action="contact.php" method="POST" novalidate>
             <!-- Honeypot field to catch bots -->
             <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             
             <div class="form-group">
                 <label for="name">Name <span class="required">*</span></label>

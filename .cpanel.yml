@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - /bin/cp index.html /home/manycez2q2t3/public_html/
+    - /bin/cp index.php /home/manycez2q2t3/public_html/
     - /bin/cp contact.php /home/manycez2q2t3/public_html/
     - /bin/cp .htaccess /home/manycez2q2t3/public_html/
     - /bin/cp favicon.png /home/manycez2q2t3/public_html/

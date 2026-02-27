@@ -6,6 +6,9 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Prevent directory browsing
 Options -Indexes
 
+# Set directory index
+DirectoryIndex index.php index.html
+
 # Protect sensitive files
 <FilesMatch "^(contact\.php|rate_limit\.json)$">
     Order allow,deny

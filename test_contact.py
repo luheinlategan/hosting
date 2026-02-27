@@ -61,6 +61,7 @@ def run_all_tests():
     print("="*60)
     print(f"Testing: {BASE_URL}")
     input("Press ENTER to start tests...")
+    input("Press ENTER to start tests...")
 
     results = {}
     unique_id = int(time.time())
