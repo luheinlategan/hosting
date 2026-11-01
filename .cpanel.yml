@@ -5,6 +5,7 @@ deployment:
     - /bin/cp contact.php /home/manycez2q2t3/public_html/
     - /bin/cp .htaccess /home/manycez2q2t3/public_html/
     - /bin/cp favicon.png /home/manycez2q2t3/public_html/
+    - /bin/cp manycents-logo.png /home/manycez2q2t3/public_html/
     # The old site (page and images) must not stay reachable on the server.
     - /bin/rm -f /home/manycez2q2t3/public_html/index.html
     - /bin/rm -f /home/manycez2q2t3/public_html/logo.png

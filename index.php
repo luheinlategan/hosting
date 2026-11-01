@@ -54,10 +54,11 @@ if (empty($_SESSION['csrf_token'])) {
             --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             --gutter: clamp(20px, 5vw, 56px);
             --max: 1180px;
+            --header-h: 92px;
         }
 
         *, *::before, *::after { box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 8px); }
         body {
             margin: 0;
             font-family: var(--sans);
@@ -108,9 +109,9 @@ if (empty($_SESSION['csrf_token'])) {
             -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--line-dark);
         }
-        header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-family: var(--serif); font-size: 1.3rem; font-weight: 500; letter-spacing: .01em; }
-        .brand svg { width: 34px; height: auto; }
+        header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+        .brand { display: flex; align-items: center; text-decoration: none; }
+        .brand img { height: calc(var(--header-h) - 16px); width: auto; }
         nav.main ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; align-items: center; }
         nav.main a { text-decoration: none; font-size: .93rem; color: var(--muted-dark); transition: color .2s; }
         nav.main a:hover { color: var(--on-dark); }
@@ -243,8 +244,9 @@ if (empty($_SESSION['csrf_token'])) {
             .strip li:nth-child(n+3) { border-top: 1px solid var(--line-dark); }
         }
         @media (max-width: 760px) {
+            :root { --header-h: 68px; }
             .menu-btn { display: block; }
-            nav.main { position: absolute; top: 68px; left: 0; right: 0; background: var(--ink); border-bottom: 1px solid var(--line-dark); display: none; }
+            nav.main { position: absolute; top: var(--header-h); left: 0; right: 0; background: var(--ink); border-bottom: 1px solid var(--line-dark); display: none; }
             nav.main.open { display: block; }
             nav.main ul { flex-direction: column; align-items: stretch; gap: 0; padding: 8px var(--gutter) 20px; }
             nav.main li a { display: block; padding: 14px 0; border-bottom: 1px solid var(--line-dark); font-size: 1rem; }
@@ -261,20 +263,10 @@ if (empty($_SESSION['csrf_token'])) {
 <body>
     <a class="skip" href="#main">Skip to content</a>
 
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-        <defs>
-            <g id="m-mark" fill="currentColor">
-                <path d="M238 292H346L528 670H440L312 410V670H238Z"/>
-                <path d="M543 292H625L737 670H652L578 410L512 580L467 488Z"/>
-            </g>
-        </defs>
-    </svg>
-
     <header class="site">
         <div class="wrap">
-            <a class="brand" href="#top" aria-label="ManyCents, home">
-                <svg viewBox="230 280 515 400" style="color:var(--gold)" aria-hidden="true"><use href="#m-mark"/></svg>
-                ManyCents
+            <a class="brand" href="#top" aria-label="ManyCents Resources, home">
+                <img src="manycents-logo.png" width="511" height="188" alt="ManyCents Resources, Creator of Wealth">
             </a>
             <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
             <nav class="main" id="mainNav" aria-label="Main">

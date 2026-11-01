@@ -23,6 +23,8 @@ verify() {
         code=$(curl -s -o /dev/null -m 15 -w '%{http_code}' "$LIVE/$p")
         [ "$code" = 404 ] && ok "/$p is gone (404)" || fail "/$p answers $code, should be 404"
     done
+    code=$(curl -s -o /dev/null -m 15 -w '%{http_code}' "$LIVE/manycents-logo.png")
+    [ "$code" = 200 ] && ok "/manycents-logo.png is served" || fail "/manycents-logo.png answers $code, should be 200"
     for p in rate_limit.json form_submissions.txt; do
         code=$(curl -s -o /dev/null -m 15 -w '%{http_code}' "$LIVE/$p")
         { [ "$code" = 403 ] || [ "$code" = 404 ]; } && ok "/$p is not readable ($code)" || fail "/$p answers $code, should be 403 or 404"
