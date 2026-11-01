@@ -346,7 +346,7 @@ if (empty($_SESSION['csrf_token'])) {
                     <article class="pillar">
                         <span class="num">01</span>
                         <h3>ManyCents Resources</h3>
-                        <p>Full-cycle coal operations: mining, processing and trading across Southern Africa. We buy at source, wash and blend to specification, and sell to industrial and power buyers on an independent certificate of analysis.</p>
+                        <p>Full-cycle coal operations: mining, processing and trading across Southern Africa. We mine or buy at source, wash and blend to specification, and sell to industrial and power buyers on an independent certificate of analysis.</p>
                         <a href="#coal">What we trade &rarr;</a>
                     </article>
                     <article class="pillar">
