@@ -17,6 +17,9 @@ index.php       - Main single-page website (embedded CSS/JS, CSRF token)
 contact.php     - Form handler with SMTP email + spam prevention
 .htaccess       - Apache config (HTTPS redirect, caching, gzip)
 rate_limit.json - IP-based rate limiting state
+deploy.sh       - Server-side deploy (cron + cPanel button); stamps the release
+ship.sh         - This PC: check, commit, push, wait until live, verify
+HOW_TO_SHIP.md  - The full update process (read this before changing anything)
 ```
 
 ## Deployment

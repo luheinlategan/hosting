@@ -25,7 +25,10 @@ Corporate marketing website for ManyCents Resources - a coal mining and trading 
 ```
 index.php       - Main website (single page, embedded CSS/JS, CSRF token)
 contact.php     - Form handler with SMTP email
-.htaccess       - Apache config (HTTPS, caching, gzip)
+.htaccess       - Apache config (HTTPS, caching, gzip, blocks private files)
+deploy.sh       - Server-side deploy (cron + cPanel button); stamps the release
+ship.sh         - This PC: check, commit, push, wait until live, verify
+HOW_TO_SHIP.md  - The full update process (read this before changing anything)
 ```
 
 ## Deployment
