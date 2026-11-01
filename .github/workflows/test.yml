@@ -18,12 +18,14 @@ jobs:
           php-version: '8.2'
 
       - name: Lint PHP
-        run: php -l contact.php
+        run: |
+          php -l contact.php
+          php -l index.php
 
       - name: Validate HTML
         run: |
           # Check for common HTML issues
-          if grep -q '</html>' index.html && grep -q '<html' index.html; then
+          if grep -q '</html>' index.php && grep -q '<html' index.php; then
             echo "✅ HTML structure valid"
           else
             echo "❌ HTML structure invalid"

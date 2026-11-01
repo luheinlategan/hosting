@@ -13,7 +13,7 @@ ManyCents Resources corporate website - A static HTML marketing site with PHP co
 ## Files
 
 ```
-index.html      - Main single-page website (embedded CSS/JS)
+index.php       - Main single-page website (embedded CSS/JS, CSRF token)
 contact.php     - Form handler with SMTP email + spam prevention
 .htaccess       - Apache config (HTTPS redirect, caching, gzip)
 rate_limit.json - IP-based rate limiting state
@@ -21,7 +21,7 @@ rate_limit.json - IP-based rate limiting state
 
 ## Deployment
 
-No build process - deploy files directly to web server root (`/public_html/`).
+No build process. See `HOW_TO_SHIP.md`: push to GitHub, then cPanel Git Version Control pulls and deploys (`.cpanel.yml`). Never edit files in cPanel File Manager.
 
 ## Contact Form
 

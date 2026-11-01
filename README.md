@@ -23,14 +23,14 @@ Corporate marketing website for ManyCents Resources - a coal mining and trading 
 ## Files
 
 ```
-index.html      - Main website (single-page with embedded CSS/JS)
+index.php       - Main website (single page, embedded CSS/JS, CSRF token)
 contact.php     - Form handler with SMTP email
 .htaccess       - Apache config (HTTPS, caching, gzip)
 ```
 
 ## Deployment
 
-No build process required - deploy files directly to web server root.
+No build process. See `HOW_TO_SHIP.md`: push to GitHub, then cPanel Git Version Control pulls and deploys (`.cpanel.yml`).
 
 ## Contact Form
 
