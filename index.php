@@ -10,7 +10,7 @@ if (empty($_SESSION['csrf_token'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ManyCents | Coal, corridors and code</title>
-    <meta name="description" content="ManyCents sources, processes and trades coal across Southern Africa, moves it to Maputo, Matola and Richards Bay, and builds deterministic software for heavy industry.">
+    <meta name="description" content="ManyCents mines, sources, processes and trades coal across Southern Africa, moves it to Maputo, Matola and Richards Bay, and builds deterministic software for heavy industry.">
     <meta name="author" content="ManyCents Resources (Pty) Ltd">
     <meta name="theme-color" content="#0d0f0f">
 
@@ -79,7 +79,7 @@ if (empty($_SESSION['csrf_token'])) {
         .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
         section { padding: clamp(72px, 10vw, 128px) 0; position: relative; }
         .on-paper { background: var(--paper); color: var(--on-paper); }
-        .on-ink-2 { background: var(--ink-2); }
+        .on-ink-2 { background: var(--ink-2); border-top: 1px solid var(--line-dark); }
 
         .eyebrow {
             font-family: var(--sans);
@@ -192,16 +192,6 @@ if (empty($_SESSION['csrf_token'])) {
         .amap .models span { font-size: .82rem; padding: 4px 12px; border: 1px solid var(--line-dark); color: var(--on-dark); border-radius: 100px; }
         .principle { margin-top: 56px; padding-left: 24px; border-left: 2px solid var(--gold); max-width: 62ch; font-family: var(--serif); font-size: clamp(1.25rem, 2.2vw, 1.65rem); line-height: 1.4; color: var(--on-dark); }
 
-        /* ---------- About ---------- */
-        .about { display: grid; grid-template-columns: 4fr 8fr; gap: 64px; align-items: start; }
-        .portrait { aspect-ratio: 4 / 5; background: var(--ink); border-radius: 2px; display: grid; place-items: center; position: relative; overflow: hidden; }
-        .portrait svg.mark { width: 46%; }
-        .portrait::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(200, 164, 92, .35); }
-        .about h2 { font-size: clamp(2rem, 4vw, 2.9rem); }
-        .about .role { color: var(--gold-ink); font-weight: 600; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; margin: 14px 0 28px; }
-        .about p + p { margin-top: 18px; }
-        .about p { color: #34383a; max-width: 62ch; }
-
         /* ---------- Contact ---------- */
         .contact-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; margin-top: 56px; }
         .details dl { margin: 0; }
@@ -247,8 +237,7 @@ if (empty($_SESSION['csrf_token'])) {
         /* ---------- Responsive ---------- */
         @media (max-width: 980px) {
             .coal-grid { grid-template-columns: repeat(2, 1fr); }
-            .corridor-layout, .contact-grid, .about, .amap, .assurance { grid-template-columns: 1fr; gap: 40px; }
-            .portrait { max-width: 320px; aspect-ratio: 1; }
+            .corridor-layout, .contact-grid, .amap, .assurance { grid-template-columns: 1fr; gap: 40px; }
             .strip ul { grid-template-columns: repeat(2, 1fr); }
             .strip li:nth-child(3) { border-left: 0; padding-left: 0; }
             .strip li:nth-child(n+3) { border-top: 1px solid var(--line-dark); }
@@ -294,7 +283,6 @@ if (empty($_SESSION['csrf_token'])) {
                     <li><a href="#coal">Coal</a></li>
                     <li><a href="#corridor">Corridor</a></li>
                     <li><a href="#software">Software</a></li>
-                    <li><a href="#about">About</a></li>
                     <li><a class="cta" href="#contact">Get in touch</a></li>
                 </ul>
             </nav>
@@ -335,7 +323,7 @@ if (empty($_SESSION['csrf_token'])) {
             <div class="wrap">
                 <p class="eyebrow">ManyCents &middot; Durbanville, South Africa</p>
                 <h1>Coal, corridors <em>and code.</em></h1>
-                <p class="lead">We source, process and trade coal across Southern Africa, move it to the ports of Maputo, Matola and Richards Bay, and build the software that keeps heavy industry accountable.</p>
+                <p class="lead">We mine, source, process and trade coal across Southern Africa, move it to the ports of Maputo, Matola and Richards Bay, and build the software that keeps heavy industry accountable.</p>
                 <div class="actions">
                     <a class="btn primary" href="#contact">Enquire about coal</a>
                     <a class="btn ghost" href="#group">Explore the group</a>
@@ -551,25 +539,8 @@ if (empty($_SESSION['csrf_token'])) {
             </div>
         </section>
 
-        <!-- ===== About ===== -->
-        <section class="on-paper" id="about">
-            <div class="wrap about">
-                <div class="portrait reveal" role="img" aria-label="ManyCents mark">
-                    <svg class="mark" viewBox="230 280 515 400" style="color:var(--gold)" aria-hidden="true"><use href="#m-mark"/></svg>
-                </div>
-                <div class="reveal">
-                    <p class="eyebrow">Leadership</p>
-                    <h2>Luhein Lategan</h2>
-                    <p class="role">Founder &amp; CEO &middot; Domain Architect</p>
-                    <p>Luhein is an industrial entrepreneur and systems architect working where heavy physical industry meets frontier agentic AI. As founder and CEO of ManyCents Resources, he leads full-cycle mining, processing and commodity trading operations across Southern Africa, and multi-modal export supply chains to Maputo, Matola and Richards Bay.</p>
-                    <p>As Domain Architect and AI Systems Orchestrator at ManyCents Software Studio, he turns the realities of heavy industry, statutory legal liability, haulage bottlenecks and multi-million-dollar cargo rejection penalties, into deterministic, production-grade software engines.</p>
-                    <p>He is the creator of the 7-Seat Autonomous Multi-Agent Protocol (AMAP), an adversarial engineering harness that orchestrates Gemini, Claude, Grok and DeepSeek to build mission-critical, zero-hallucination software at scale.</p>
-                </div>
-            </div>
-        </section>
-
         <!-- ===== Contact ===== -->
-        <section id="contact">
+        <section class="on-ink-2" id="contact">
             <div class="wrap">
                 <p class="eyebrow reveal">Get in touch</p>
                 <h2 class="title reveal">Tell us what you need to move, make or measure.</h2>
