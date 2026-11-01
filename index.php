@@ -10,7 +10,7 @@ if (empty($_SESSION['csrf_token'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ManyCents | Coal, corridors and code</title>
-    <meta name="description" content="ManyCents mines, sources, processes and trades coal across Southern Africa, moves it to Maputo, Matola and Richards Bay, and builds deterministic software for heavy industry.">
+    <meta name="description" content="ManyCents mines, sources, processes and trades coal across Southern Africa, exports it through Maputo and Richards Bay, and builds deterministic software for heavy industry.">
     <meta name="author" content="ManyCents Resources (Pty) Ltd">
     <meta name="theme-color" content="#0d0f0f">
     <meta name="release" content="__RELEASE__">
@@ -317,7 +317,7 @@ if (empty($_SESSION['csrf_token'])) {
             <div class="wrap">
                 <p class="eyebrow">ManyCents &middot; Durbanville, South Africa</p>
                 <h1>Coal, corridors <em>and code.</em></h1>
-                <p class="lead">We mine, source, process and trade coal across Southern Africa, move it to the ports of Maputo, Matola and Richards Bay, and build the software that keeps heavy industry accountable.</p>
+                <p class="lead">We mine, source, process and trade coal across Southern Africa, export it through Maputo and Richards Bay, and build the software that keeps heavy industry accountable.</p>
                 <div class="actions">
                     <a class="btn primary" href="#contact">Enquire about coal</a>
                     <a class="btn ghost" href="#group">Explore the group</a>
@@ -329,7 +329,7 @@ if (empty($_SESSION['csrf_token'])) {
             <div class="wrap">
                 <ul>
                     <li><strong>Anthracite, lean, RB thermal</strong>Blended to specification</li>
-                    <li><strong>Maputo &middot; Matola &middot; Richards Bay</strong>Multi-modal export routes</li>
+                    <li><strong>Maputo &middot; Richards Bay</strong>Multi-modal export routes</li>
                     <li><strong>Mine to vessel</strong>One accountable chain</li>
                     <li><strong>Deterministic software</strong>Rules written, versioned, traceable</li>
                 </ul>
@@ -420,7 +420,7 @@ if (empty($_SESSION['csrf_token'])) {
                     <ul class="routes">
                         <li>
                             <h3>Road to Maputo</h3>
-                            <p>Direct haulage from the Mpumalanga coalfields to the Port of Maputo and the Matola terminal, with gate manifests and weighbridge reconciliation handled by our own software.</p>
+                            <p>Direct haulage from the Mpumalanga coalfields to the Port of Maputo, with gate manifests and weighbridge reconciliation handled by our own software.</p>
                         </li>
                         <li>
                             <h3>Rail via eSwatini</h3>
@@ -461,7 +461,6 @@ if (empty($_SESSION['csrf_token'])) {
                                 <text x="340" y="278" text-anchor="middle">Matsapha</text>
                                 <text x="340" y="297" text-anchor="middle" font-weight="400" fill="#a9adab" font-size="14">eSwatini</text>
                                 <text x="570" y="56" text-anchor="middle">Maputo</text>
-                                <text x="570" y="74" text-anchor="middle" font-weight="400" fill="#a9adab" font-size="14">and Matola</text>
                                 <text x="570" y="356" text-anchor="middle">Richards Bay</text>
                             </g>
                         </svg>
