@@ -25,9 +25,10 @@ verify() {
     done
     for p in rate_limit.json form_submissions.txt; do
         code=$(curl -s -o /dev/null -m 15 -w '%{http_code}' "$LIVE/$p")
-        [ "$code" = 403 ] || [ "$code" = 404 ] && ok "/$p is not readable ($code)" || fail "/$p answers $code, should be 403 or 404"
+        { [ "$code" = 403 ] || [ "$code" = 404 ]; } && ok "/$p is not readable ($code)" || fail "/$p answers $code, should be 403 or 404"
     done
-    [ "$(curl -s -m 15 "$LIVE/credentials.php" | wc -c)" = 0 ] && ok "/credentials.php serves nothing" || fail "/credentials.php serves content"
+    code=$(curl -s -o /dev/null -m 15 -w '%{http_code}' "$LIVE/credentials.php")
+    { [ "$code" = 403 ] || [ "$code" = 404 ]; } && ok "/credentials.php is not readable ($code)" || fail "/credentials.php answers $code, should be 403 or 404"
     return $bad
 }
 

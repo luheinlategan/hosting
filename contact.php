@@ -168,7 +168,7 @@ $textContent .= "Product Interest: " . $product . "\n\n";
 $textContent .= "Message:\n" . $message . "\n";
 
 // Build AUTO-REPLY email to customer
-$autoReplySubject = "Thank you for contacting ManyCents Resources";
+$autoReplySubject = "Thank you for contacting ManyCents";
 $autoReplyHTML = "
 <!DOCTYPE html>
 <html>
@@ -176,42 +176,42 @@ $autoReplyHTML = "
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.8; color: #333; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white; padding: 30px 20px; text-align: center; }
+        .header { background: #0d0f0f; color: white; padding: 30px 20px; text-align: center; }
         .header h1 { margin: 0; font-size: 24px; }
         .content { background: #ffffff; padding: 30px; border: 1px solid #ddd; }
         .footer { background: #f9f9f9; padding: 20px; text-align: center; font-size: 14px; color: #666; border-top: 1px solid #ddd; }
-        .highlight { color: #ffa500; font-weight: bold; }
-        .contact-info { background: #f5f5f5; padding: 15px; border-left: 4px solid #ffa500; margin: 20px 0; }
+        .highlight { color: #8a6a25; font-weight: bold; }
+        .contact-info { background: #f5f5f5; padding: 15px; border-left: 4px solid #c8a45c; margin: 20px 0; }
     </style>
 </head>
 <body>
     <div class='container'>
         <div class='header'>
-            <h1>ManyCents Resources</h1>
-            <p style='margin: 5px 0 0 0; font-size: 14px;'>Creator of Wealth</p>
+            <h1>ManyCents</h1>
+            <p style='margin: 5px 0 0 0; font-size: 14px;'>Coal, corridors and code</p>
         </div>
         <div class='content'>
             <p>Dear " . htmlspecialchars($name) . ",</p>
             
-            <p>Thank you for your inquiry regarding our coal products. We have received your message and appreciate your interest in ManyCents Resources.</p>
+            <p>Thank you for your enquiry. We have received your message and appreciate your interest in ManyCents.</p>
             
-            <p>Our team will review your requirements and respond within <span class='highlight'>24 hours</span> during business days.</p>
+            <p>Our team will review your enquiry, whether it concerns coal supply, logistics or software, and respond within <span class='highlight'>24 hours</span> during business days.</p>
             
-            <p>If your inquiry is urgent, please feel free to contact us directly:</p>
+            <p>If your enquiry is urgent, please feel free to contact us directly:</p>
             <div class='contact-info'>
                 <strong>Phone:</strong> +27 60 959 2405<br>
                 <strong>Email:</strong> office@manycents.co.za<br>
                 <strong>CEO:</strong> Luhein Lategan
             </div>
             
-            <p>We look forward to discussing how ManyCents Resources can meet your coal supply needs.</p>
+            <p>We look forward to working out how ManyCents can help.</p>
             
             <p>Best regards,<br>
-            <strong>ManyCents Resources Team</strong></p>
+            <strong>The ManyCents Team</strong></p>
         </div>
         <div class='footer'>
             <p><strong>ManyCents Resources (Pty) Ltd</strong><br>
-            18 Bubesi House, Wellington Office Park, Durbanville, 7550, South Africa<br>
+            18 Bubesi House, Wellington Office Park, Durbanville, 7500, South Africa<br>
             www.manycents.co.za</p>
         </div>
     </div>
@@ -221,23 +221,23 @@ $autoReplyHTML = "
 
 $autoReplyText = "Dear " . $name . ",
 
-Thank you for your inquiry regarding our coal products. We have received your message and appreciate your interest in ManyCents Resources.
+Thank you for your enquiry. We have received your message and appreciate your interest in ManyCents.
 
-Our team will review your requirements and respond within 24 hours during business days.
+Our team will review your enquiry, whether it concerns coal supply, logistics or software, and respond within 24 hours during business days.
 
-If your inquiry is urgent, please feel free to contact us directly:
+If your enquiry is urgent, please feel free to contact us directly:
 Phone: +27 60 959 2405
 Email: office@manycents.co.za
 CEO: Luhein Lategan
 
-We look forward to discussing how ManyCents Resources can meet your coal supply needs.
+We look forward to working out how ManyCents can help.
 
 Best regards,
-ManyCents Resources Team
+The ManyCents Team
 
 ---
 ManyCents Resources (Pty) Ltd
-18 Bubesi House, Wellington Office Park, Durbanville, 7550, South Africa
+18 Bubesi House, Wellington Office Park, Durbanville, 7500, South Africa
 www.manycents.co.za
 ";
 
