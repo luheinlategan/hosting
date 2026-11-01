@@ -260,7 +260,8 @@ function tryPHPMail($to, $subject, $htmlContent, $textContent, $replyEmail = nul
     $body .= $htmlContent . "\r\n\r\n";
     $body .= "--" . $boundary . "--";
     
-    return @mail($to, $subject, $body, $headers);
+    // -f sets the envelope sender to our own address, so it matches the From header and the DKIM domain
+    return @mail($to, $subject, $body, $headers, "-f" . FROM_EMAIL);
 }
 
 // SMTP sending function
