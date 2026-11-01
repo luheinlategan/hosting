@@ -13,6 +13,7 @@ if (empty($_SESSION['csrf_token'])) {
     <meta name="description" content="ManyCents mines, sources, processes and trades coal across Southern Africa, moves it to Maputo, Matola and Richards Bay, and builds deterministic software for heavy industry.">
     <meta name="author" content="ManyCents Resources (Pty) Ltd">
     <meta name="theme-color" content="#0d0f0f">
+    <meta name="release" content="__RELEASE__">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.manycents.co.za/">
