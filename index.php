@@ -201,6 +201,7 @@ if (empty($_SESSION['csrf_token'])) {
         .details dt:first-child { margin-top: 0; }
         .details dd { margin: 6px 0 0; color: #d6d8d6; }
         .details a { text-decoration: none; border-bottom: 1px solid rgba(200, 164, 92, .5); }
+        .details .lbl { color: var(--muted-dark); }
         .details a:hover { color: var(--gold-hi); }
         form.contact { display: grid; gap: 20px; grid-template-columns: 1fr 1fr; }
         .field { display: flex; flex-direction: column; gap: 7px; }
@@ -545,10 +546,11 @@ if (empty($_SESSION['csrf_token'])) {
                             <dd>ManyCents Resources (Pty) Ltd<br>Luhein Lategan, CEO</dd>
                             <dt>Office</dt>
                             <dd>18 Bubesi House, Wellington Office Park<br>Durbanville, Western Cape 7500</dd>
-                            <dt>Phone</dt>
+                            <dt>Phone/WhatsApp</dt>
                             <dd><a href="tel:+27609592405">+27 60 959 2405</a></dd>
                             <dt>Email</dt>
-                            <dd><a href="mailto:luhein.lategan@manycents.co.za">luhein.lategan@manycents.co.za</a></dd>
+                            <dd><span class="lbl">CEO:</span> <a href="mailto:luhein.lategan@manycents.co.za">luhein.lategan@manycents.co.za</a><br>
+                                <span class="lbl">Admin Office:</span> <a href="mailto:office@manycents.co.za">office@manycents.co.za</a></dd>
                         </dl>
                     </div>
 
